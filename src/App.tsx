@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   HashRouter,
   Routes,
-  Route,
-  Navigate,
 } from "react-router-dom";
 import "./App.css";
 
 function App() {
-  const [theme, setTheme] = useState(() => {
+  const [theme, ] = useState(() => {
     if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       return 'dark';
     }
     return 'light';
   });
-  const [isSeasonal] = useState(false);
 
   useEffect(() => {
     if (theme === "dark") {
